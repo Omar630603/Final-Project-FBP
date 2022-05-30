@@ -1,10 +1,10 @@
 import "./App.css";
-import AuthExample from "./AuthExample";
+import Auth from "./Auth";
 
 function App() {
   return (
     <div className="App">
-      <AuthExample />
+      <Auth />
     </div>
   );
 }
