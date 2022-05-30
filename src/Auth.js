@@ -1,15 +1,10 @@
 import "./Index.css";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import LoginPage from "./Pages/LoginPage";
 import Genre from "./Pages/Genre";
-
 
 export default function Auth() {
   return (
@@ -18,19 +13,11 @@ export default function Auth() {
       <div className="app-container">
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/genre" element={<Genre />}></Route>
+          <Route path="/genre/*" element={<Genre />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
-          <Route
-            path="/private"
-            element={
-             <LoginPage/>
-            }
-          ></Route>
+          <Route path="/private" element={<LoginPage />}></Route>
         </Routes>
       </div>
     </Router>
   );
 }
-
-
-
