@@ -1,6 +1,6 @@
-import "../Index.css";
+import "./Navbar.css";
 import React from "react";
-import Logo from "../Assets/Logo.png";
+import Logo from "../../Assets/Logo.png";
 import {
 	Link,
 } from "react-router-dom";
@@ -15,6 +15,9 @@ const Navbar=() => {
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="movies">Movies</Link>
 					</li>
 					<li>
 						<Link to="/private">My Favorite</Link>
