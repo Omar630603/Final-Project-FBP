@@ -6,36 +6,11 @@
   color: white;
   background: #1F1D2C;
 }
-.navbar-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:30px 50px;
-  border-bottom: 0.25px solid white;
-}
-
-.navbar-container ul{
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-}
-.navbar-container ul li {
-  display: flex;
-  list-style: none;
-  color: blue;
-}
-
-.navbar-container ul li a {
-  text-decoration: none;
-
-}
-
-.logo-image{
-  height: 40px;
-  width: auto;
-}
 
 .home-container {
   background-color: #1F1D2C;
   padding: 30px 50px;
 }
+
+
+/* Jumbotro */

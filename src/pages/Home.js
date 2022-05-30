@@ -1,9 +1,11 @@
 import React from "react";
+import "../Index.css";
+import Jumbotron from "../Components/Jumbotron/Jumbotron";
 
 const Home=() => {
 	return (
 		<div className="home-container">
-				<h2>Home</h2>
+				<Jumbotron/>
 		</div>
 	);
 };
