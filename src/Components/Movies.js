@@ -1,31 +1,35 @@
 import React from "react";
 import "../Index.css";
-import { Routes, Route, Link, useMatch, useParams } from "react-router-dom";
+import { Routes, Route, useMatch } from "react-router-dom";
+import movieImage from "../Assets/blackwidow.jpg";
+
 function Movies() {
-  const match = useMatch("genre/movies/*");
-  console.log();
+  const match = useMatch("genre/movies/:genre");
   return (
     <div>
-      <h2>{`${match.params["*"]}`}</h2>
-      <Link to={`${match.pathname}`}>
-        <div className="movies">
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <div className="movie-info"></div>
+      <h2 className="genre-name">{`${match.params["genre"]}`}</h2>
+      <div className="movies">
+        <div className="movie-container">
+          <div className="movie-image">
+            <img src={movieImage} alt="Black Widow" />
+          </div>
+          <div className="movie-info">
+            <h3>Black Widow</h3>
+            <p>A great movie</p>
           </div>
         </div>
-      </Link>
+      </div>
       <Routes>
-        <Route path={`${match.pathname}/:topicId`} element={<Movie />}></Route>
+        <Route path="/detail/:movie" element={<Movie />}></Route>
       </Routes>
     </div>
   );
 }
 function Movie() {
-  let { topicId } = useParams();
+  const match = useMatch("/detail/:movie");
   return (
     <div>
-      <h3>{topicId}</h3>
+      <h3>{`${match.params["movie"]}`}</h3>
     </div>
   );
 }

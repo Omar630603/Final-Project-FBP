@@ -25,7 +25,7 @@ const Genrebuttons = () => {
       </div>
       <div>
         <Routes>
-          <Route path="/movies/*" element={<Movies />}></Route>
+          <Route path="/movies/:genre" element={<Movies />}></Route>
         </Routes>
       </div>
     </div>
