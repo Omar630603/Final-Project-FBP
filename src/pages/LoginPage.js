@@ -7,7 +7,7 @@ import {
 
 // Auth
 import {firebaseauth} from "../Firebase/FirebaseAuth";
-import {signInWithEmailAndPassword } from "firebase/auth";
+import {signInWithEmailAndPassword, onAuthStateChanged, signOut,  } from "firebase/auth";
 
 // Style
 import "./Style/LoginPage.css";
@@ -16,50 +16,47 @@ import "./Style/LoginPage.css";
 import Logo from "../Assets/Logo.png";
 import GoogleLogo from "../Assets/Google Logo.png";
 
+
 const LoginPage=() => {
+	
 
 	const [loginEmail,setLoginEmail]=useState("");
 	const [loginPassword,setLoginPassword]=useState("");
-	const [user,setUser]=useState("");
+	const [user, setUser]=useState({});
 
 	let navigate=useNavigate();
 	let location=useLocation();
 	let {from}=location.state||{from: {pathname: "/"}};
 
+	onAuthStateChanged(firebaseauth,(currentUser) => {
+		setUser(currentUser);
+	})
 
 	// Login Function
-	const login=async ()=>  {
+	const login= ()=>  {
 		try {
-			const user=await signInWithEmailAndPassword(firebaseauth,loginEmail,loginPassword)
+			const user = signInWithEmailAndPassword(firebaseauth,loginEmail,loginPassword)
 			console.log(user)
-			navigate("/private",{from})
+			navigate("/myfavorite",{from})
 		}
 		catch(error) {
 			console.log(error.message)
 		}
 	}
+
+	const logout=async () => {
+		await signOut(firebaseauth);
+	}
+
 	
-	// const fakeAuth={
-	// 	isAuthenticated: false,
-	// 	authenticate(cb) {
-	// 		fakeAuth.isAuthenticated=true;
-	// 		setTimeout(cb,100);
-	// 	},
-	// 	signout(cb) {
-	// 		fakeAuth.isAuthenticated=false;
-	// 		setTimeout(cb,100);
-	// 	},
-	// };
-
-
+	
 
 	return (
 		<div className="login-container">
-			{/* <p>You must log in to view the page at {from.pathname}</p>
-			<button onClick={login}>Log in</button> */}
-			
-
 			<div>
+				<button onClick={logout}>Sign Out</button>
+				<p>Sign In as  </p>
+				{user?.email}
 				<div className="logo-login-container">
 					<img src={Logo} alt="Logo Movie App" className="logo-image" />
 				</div>

@@ -7,11 +7,18 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import Genre from "./Pages/Genre";
 import Movies from "./Pages/Movies";
+import MyFavorite from "./Pages/MyFavorite";
+
+import {firebaseauth} from "./Firebase/FirebaseAuth";
+
+
 
 export default function Auth() {
   return (
     <Router>
       <Navbar />
+      {/* <button>Sign Out</button> */}
+      {/* <p>Sign In as {firebaseauth.currentUser.email} </p> */}
       <div className="app-container">
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -21,6 +28,7 @@ export default function Auth() {
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/private" element={<LoginPage />}></Route>
           <Route path="/register" element={<RegisterPage />}></Route>
+          <Route path="/myfavorite" element={<MyFavorite />}></Route>
         </Routes>
       </div>
     </Router>

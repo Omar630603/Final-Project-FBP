@@ -27,11 +27,11 @@ const RegisterPage=() => {
 
 
 	// register Function
-	const register=async () => {
+	const register=() => {
 		try {
-			const user=await createUserWithEmailAndPassword(firebaseauth,registerEmail,registerPassword);
+			const user= createUserWithEmailAndPassword(firebaseauth,registerEmail,registerPassword);
 			console.log(user);
-			navigate("/private",{from});
+			navigate("/myfavorite",{from});
 		}
 		catch(error) {
 			console.log(error.message);
