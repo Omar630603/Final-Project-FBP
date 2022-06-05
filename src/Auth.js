@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home";
 import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
 import Genre from "./Pages/Genre";
 import Movies from "./Pages/Movies";
 
@@ -19,6 +20,7 @@ export default function Auth() {
           <Route path="/genre" element={<Genre />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/private" element={<LoginPage />}></Route>
+          <Route path="/register" element={<RegisterPage />}></Route>
         </Routes>
       </div>
     </Router>
