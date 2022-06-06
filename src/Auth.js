@@ -9,10 +9,6 @@ import Genre from "./Pages/Genre";
 import Movies from "./Pages/Movies";
 import MyFavorite from "./Pages/MyFavorite";
 
-import {firebaseauth} from "./Firebase/FirebaseAuth";
-
-
-
 export default function Auth() {
   return (
     <Router>
