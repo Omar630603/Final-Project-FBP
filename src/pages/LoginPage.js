@@ -4,6 +4,7 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 
 // Auth
 import { firebaseauth } from "../Firebase/FirebaseAuth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -21,6 +22,7 @@ const LoginPage = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [user, setUser] = useState({});
+  const provider = new GoogleAuthProvider();
 
   let navigate = useNavigate();
   let location = useLocation();
@@ -50,6 +52,15 @@ const LoginPage = () => {
   const logout = async () => {
     await signOut(firebaseauth);
     navigate("/login", { from });
+  };
+
+  const registerWithGoogle = () => {
+    try {
+      signInWithPopup(firebaseauth, provider).then((result) => {
+        console.log(result);
+        navigate("/myfavorite", { from });
+      });
+    } catch (error) {}
   };
 
   return (
@@ -100,7 +111,7 @@ const LoginPage = () => {
           </p>
           <hr />
           <p className="center-text">or</p>
-          <button className="google-button-login">
+          <button onClick={registerWithGoogle} className="google-button-login">
             <img src={GoogleLogo} alt="Google Logo" className="google-logo" />
             Login With Google
           </button>

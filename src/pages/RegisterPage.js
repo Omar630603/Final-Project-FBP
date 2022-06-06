@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { firebaseauth } from "../Firebase/FirebaseAuth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // Style
 import "./Style/RegisterPage.css";
 
@@ -16,7 +17,7 @@ import GoogleLogo from "../Assets/Google Logo.png";
 const RegisterPage = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  // const [user,setUser]=useState("");
+  const provider = new GoogleAuthProvider();
 
   let navigate = useNavigate();
   let location = useLocation();
@@ -35,6 +36,14 @@ const RegisterPage = () => {
     } catch (error) {
       console.log(error.message);
     }
+  };
+  const registerWithGoogle = () => {
+    try {
+      signInWithPopup(firebaseauth, provider).then((result) => {
+        console.log(result);
+        navigate("/myfavorite", { from });
+      });
+    } catch (error) {}
   };
 
   return (
@@ -79,7 +88,10 @@ const RegisterPage = () => {
           </form>
           <hr />
           <p className="center-text">or</p>
-          <button className="google-button-register">
+          <button
+            onClick={registerWithGoogle}
+            className="google-button-register"
+          >
             <img src={GoogleLogo} alt="Google Logo" className="google-logo" />
             Register With Google
           </button>
