@@ -12,11 +12,17 @@ const Genre = () => {
   const [genre, setGenre] = useState([]);
 
   useEffect(() => {
-    onSnapshot(collection(db,"genre"),(snapshot) => {
-      setGenre(snapshot.docs.map((doc) => doc.data()));
+    onSnapshot(collection(db, "genre"), (snapshot) => {
+      setGenre(
+        snapshot.docs.map((doc) => {
+          const data = doc.data();
+          data.id = doc.id;
+          return data;
+        })
+      );
     });
-  },[genre]);
-  
+  }, [genre]);
+
   return (
     <div className="home-container">
       <div className="genre-container">
@@ -30,6 +36,18 @@ const Genre = () => {
               return <GenreButtons key={value.id} genre={value} />;
             })}
           </ul>
+        </div>
+        <div>
+          <Routes>
+            {genre.map((value) => {
+              return (
+                <Route
+                  path={`/movies/${value.name}`}
+                  element={<Movies key={value.id} genre={value} />}
+                ></Route>
+              );
+            })}
+          </Routes>
         </div>
       </div>
     </div>
