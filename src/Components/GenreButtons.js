@@ -1,26 +1,43 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "../Index.css";
 import { Link, Route, Routes, useMatch } from "react-router-dom";
 import Movies from "./Movies";
+import db from "../Firebase/FirebaseFirestore";
+import {collection, getDocs} from "firebase/firestore"; 
+
+
 
 const Genrebuttons = () => {
-  const match = useMatch("/genre/*");
+  const match=useMatch("/genre/*");
+  
+  const [genre,setGenre]=useState([]);
+
+  useEffect(() => {
+    db.collection("genre").onSnapshot((snapshot) => {
+      setGenre(
+        snapshot.docs.map((doc) => ({
+          name: doc.name,
+          description: doc.description,
+        }))
+      );
+    });
+    console.log({genre});
+  },[]);
+
   return (
     <div>
       <div className="genre-buttons">
         <ul>
-          <li className="link-active">
-            <Link to={`${match.pathnameBase}/movies/action`}>Action</Link>
-          </li>
-          <li>
-            <Link to={`${match.pathnameBase}/movies/romance`}>Romance</Link>
-          </li>
-          <li>
-            <Link to={`${match.pathnameBase}/movies/drama`}>Drama</Link>
-          </li>
-          <li>
-            <Link to={`${match.pathnameBase}/movies/comedy`}>Comedy</Link>
-          </li>
+          {/* {genre.map(({value}) => {
+            return (
+              <li className="link-active">
+                <Link to={`${match.pathnameBase}/movies/${value.name}`}>${value.name}</Link>
+              </li>
+            )
+          })} */}
+          
+         
         </ul>
       </div>
       <div>
