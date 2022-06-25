@@ -7,14 +7,16 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { Route, Routes } from "react-router-dom";
 import Movies from "../Components/Movies";
 
+
 const Genre = () => {
   const [genre, setGenre] = useState([]);
 
   useEffect(() => {
-    onSnapshot(collection(db, "genre"), (snapshot) => {
+    onSnapshot(collection(db,"genre"),(snapshot) => {
       setGenre(snapshot.docs.map((doc) => doc.data()));
     });
-  }, [genre]);
+  },[genre]);
+  
   return (
     <div className="home-container">
       <div className="genre-container">
@@ -28,11 +30,6 @@ const Genre = () => {
               return <GenreButtons key={value.id} genre={value} />;
             })}
           </ul>
-        </div>
-        <div>
-          <Routes>
-            <Route path="/movies/:genre" element={<Movies />}></Route>
-          </Routes>
         </div>
       </div>
     </div>

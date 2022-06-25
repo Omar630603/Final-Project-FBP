@@ -1,0 +1,33 @@
+.movie-item-card{
+	width: 250px;
+	gap: 10px;
+	display: flex;
+	box-shadow: 2px 28px 79px -70px rgba(229, 229, 229, 0.75);
+}
+
+.movie-item-image{
+	height: 280px !important;
+	width: 250px !important;
+	border-radius: 20px !important;
+}
+
+.movie-text{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+
+.movie-text{
+	text-align: center;
+}
+
+
+.button-add-wishlist{
+	width: 150px;
+	height: 40px;
+	background: #de603d;
+	border-radius: 10px;
+	border: none;
+	margin-top: 20px;
+}
+

@@ -102,4 +102,11 @@
 .movie-info p {
   padding-left: 50px;
 }
-/* Jumbotro */
+
+
+.movie-item-container{
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
