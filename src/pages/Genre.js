@@ -12,9 +12,16 @@ const Genre = () => {
 
   useEffect(() => {
     onSnapshot(collection(db, "genre"), (snapshot) => {
-      setGenre(snapshot.docs.map((doc) => doc.data()));
+      setGenre(
+        snapshot.docs.map((doc) => {
+          const data = doc.data();
+          data.id = doc.id;
+          return data;
+        })
+      );
     });
   }, [genre]);
+
   return (
     <div className="home-container">
       <div className="genre-container">
@@ -31,7 +38,14 @@ const Genre = () => {
         </div>
         <div>
           <Routes>
-            <Route path="/movies/:genre" element={<Movies />}></Route>
+            {genre.map((value) => {
+              return (
+                <Route
+                  path={`/movies/${value.name}`}
+                  element={<Movies key={value.id} genre={value} />}
+                ></Route>
+              );
+            })}
           </Routes>
         </div>
       </div>
