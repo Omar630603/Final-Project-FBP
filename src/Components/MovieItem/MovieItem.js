@@ -4,7 +4,7 @@ const MovieItem=(props) => {
 	return (
 		<div>
 			<div className="movie-item-card">
-				<div className='group'>
+				<div>
 					<div className="movie-image">
 						<img src={`${props.movie.cover}`} alt={`${props.movie.name}`} className="movie-item-image" />
 					</div>
