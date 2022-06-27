@@ -15,7 +15,7 @@ const WhyChooseUs=() => {
 		<div className="whychooseus-container">
 			<div className="whychooseus-text-container">
 				<div className="text-group">
-					<h3>Why You Shold Choose Us</h3>
+					<h3>Why You Should Choose Us</h3>
 					<p>Find reason why movieapp is best for your choices</p>
 				</div>
 			</div>
