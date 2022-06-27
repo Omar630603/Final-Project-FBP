@@ -38,7 +38,9 @@
   background-color: #1f1d2c;
   padding: 30px 50px;
 }
-
+.genreName {
+  text-transform: capitalize;
+}
 /* Genre page */
 .genre-name {
   text-transform: capitalize;
@@ -53,9 +55,9 @@
   line-height: 150%;
   padding: 5px 0;
 }
-.genre-container h2{
+.genre-container h2 {
   font-size: 30px;
-	color: white;
+  color: white;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -102,9 +104,9 @@
   border-radius: 20px;
   box-shadow: 0px 0px 20px #888888;
 }
-.movie-title-container h2{
+.movie-title-container h2 {
   font-size: 30px;
-	color: white;
+  color: white;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;

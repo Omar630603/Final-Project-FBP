@@ -1,7 +1,6 @@
 import React from "react";
 import "../Index.css";
 import { Routes, Route, useMatch } from "react-router-dom";
-// import movieImage from "../Assets/blackwidow.jpg";
 import { useState, useEffect } from "react";
 import { collection, query, where, doc, getDocs } from "firebase/firestore";
 import db from "../Firebase/FirebaseFirestore";
