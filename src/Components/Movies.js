@@ -8,10 +8,10 @@ import db from "../Firebase/FirebaseFirestore";
 
 function Movies(props) {
   const match = useMatch("genre/movies/:genre");
-  const [movie, setMovie] = useState([]);
+  const [movie,setMovie]=useState([]);
+  
 
   const genreRef = doc(db, "genre", props.genre.id);
-  console.log(genreRef);
   const moviesQuery = query(
     collection(db, "movies"),
     where("genreID", "==", genreRef)

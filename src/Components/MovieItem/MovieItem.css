@@ -1,16 +1,19 @@
-.movie-item-card{
-	width: 250px;
-	gap: 10px;
-	display: flex;
-	box-shadow: 0px 0px 20px #888888;
-	flex-wrap: wrap;
-
+.movie-container {
+  height: 400px;
+  width: 300px;
+  margin: 20px 0;
+  background: #575757;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px #888888;
 }
-
-.movie-item-image{
-	height: 280px !important;
-	width: 250px !important;
-	border-radius: 20px !important;
+.movie-image {
+  border-radius: 20px 20px 0 0;
+}
+.movie-image img {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .movie-text{
@@ -32,4 +35,16 @@
 	border: none;
 	margin-top: 20px;
 }
+
+
+.button-add-wishlist-outline{
+	width: 150px;
+	height: 40px;
+	border: 1px solid #de603d;
+	background: none;
+	border-radius: 10px;
+	border: none;
+	margin-top: 20px;
+}
+
 
