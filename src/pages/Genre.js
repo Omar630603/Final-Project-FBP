@@ -40,6 +40,7 @@ const Genre = () => {
         <div>
           <Routes>
             {genre.map((value) => {
+              console.log(value);
               return (
                 <Route
                   path={`/movies/${value.name}`}
