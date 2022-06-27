@@ -1,0 +1,21 @@
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 50px;
+	border-bottom: 0.25px solid rgb(199, 199, 199);
+}
+
+.footer-container ul {
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	gap: 30px;
+}
+
+.footer-container ul li {
+	align-items: center;
+	display: flex;
+	list-style: none;
+	color: blue;
+}
