@@ -58,10 +58,11 @@
 
 
 .button-add-wishlist{
-	width: 150px;
-	height: 40px;
+	width: 270px;
+	height: 60px;
 	background: #de603d;
 	border-radius: 10px;
 	border: none;
 	margin-top: 20px;
+	font-size: 20px;
 }

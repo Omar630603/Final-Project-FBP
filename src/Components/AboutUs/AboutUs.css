@@ -6,7 +6,7 @@
 
 .aboutus-card-container{
 	display: flex;
-	background: #262144;
+	background: #2c293a;
 	padding: 50px 50px;
 	border-radius: 10px;
 	margin-top: 50px;
@@ -32,7 +32,7 @@
 	padding: 5px 0px;
 	line-height: 150%;
     text-align: center;
-    background: #262144;
+    background: #2c293a;
 }
 
 .aboutus-text-container h3{
