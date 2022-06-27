@@ -9,14 +9,8 @@ import Genre from "./Pages/Genre";
 import MoviesPage from "./Pages/MoviesPage";
 import DetailPage from "./Pages/DetailPage";
 import MyFavorite from "./Pages/MyFavorite";
-import db from "./Firebase/FirebaseFirestore";
-import {collection,onSnapshot} from "firebase/firestore";
-import {useState,useEffect} from "react";
-
 
 export default function Auth() {
-
-
   return (
     <Router>
       <Navbar />

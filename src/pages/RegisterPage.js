@@ -17,6 +17,7 @@ import GoogleLogo from "../Assets/Google Logo.png";
 const RegisterPage = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [error, setError] = useState("");
   const provider = new GoogleAuthProvider();
 
   let navigate = useNavigate();
@@ -24,15 +25,21 @@ const RegisterPage = () => {
   let { from } = location.state || { from: { pathname: "/" } };
 
   // register Function
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
     try {
-      const user = createUserWithEmailAndPassword(
+      createUserWithEmailAndPassword(
         firebaseauth,
         registerEmail,
         registerPassword
-      );
-      console.log(user);
-      navigate("/myfavorite", { from });
+      )
+        .then((result) => {
+          console.log(result);
+          navigate("/myfavorite", { from });
+        })
+        .catch((error) => {
+          setError(error.code.split("/")[1]);
+        });
     } catch (error) {
       console.log(error.message);
     }
@@ -52,6 +59,7 @@ const RegisterPage = () => {
         <div className="logo-register-container">
           <img src={Logo} alt="Logo Movie App" className="logo-image" />
         </div>
+        {error && <p className="errorMessage">{error}</p>}
         <br />
         <div className="box-register-container">
           <h1>Register</h1>

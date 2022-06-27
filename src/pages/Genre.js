@@ -7,7 +7,6 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { Route, Routes } from "react-router-dom";
 import Movies from "../Components/Movies";
 
-
 const Genre = () => {
   const [genre, setGenre] = useState([]);
 
@@ -40,7 +39,6 @@ const Genre = () => {
         <div>
           <Routes>
             {genre.map((value) => {
-              console.log(value);
               return (
                 <Route
                   path={`/movies/${value.name}`}

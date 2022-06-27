@@ -4,13 +4,13 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 
 // Auth
 import { firebaseauth } from "../Firebase/FirebaseAuth";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import {
+  GoogleAuthProvider,
+  signInWithPopup,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
 } from "firebase/auth";
 
+import useFirebaseAuthentication from "../Firebase/FirebaseAuthentication ";
 // Style
 import "./Style/LoginPage.css";
 
@@ -19,39 +19,35 @@ import Logo from "../Assets/Logo.png";
 import GoogleLogo from "../Assets/Google Logo.png";
 
 const LoginPage = () => {
+  const authUser = useFirebaseAuthentication(firebaseauth);
+
   const [loginEmail, setLoginEmail] = useState("");
+  const [error, setError] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [user, setUser] = useState({});
   const provider = new GoogleAuthProvider();
 
   let navigate = useNavigate();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
 
-  onAuthStateChanged(firebaseauth, (currentUser) => {
-    if (currentUser) {
-      setUser(currentUser);
-    }
-  });
-
+  if (authUser) {
+    navigate("/myfavorite", { from });
+  }
   // Login Function
-  const login = () => {
+  const login = (e) => {
+    e.preventDefault();
     try {
-      const user = signInWithEmailAndPassword(
-        firebaseauth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-      navigate("/myfavorite", { from });
+      signInWithEmailAndPassword(firebaseauth, loginEmail, loginPassword)
+        .then((result) => {
+          console.log(result);
+          navigate("/myfavorite", { from });
+        })
+        .catch((error) => {
+          setError(error.code.split("/")[1]);
+        });
     } catch (error) {
       console.log(error.message);
     }
-  };
-
-  const logout = async () => {
-    await signOut(firebaseauth);
-    navigate("/login", { from });
   };
 
   const registerWithGoogle = () => {
@@ -66,12 +62,10 @@ const LoginPage = () => {
   return (
     <div className="login-container">
       <div>
-        <button onClick={logout}>Sign Out</button>
-        <p>Sign In as </p>
-        {user != null ? user.email : "Sign in First"}
         <div className="logo-login-container">
           <img src={Logo} alt="Logo Movie App" className="logo-image" />
         </div>
+        {error && <p className="errorMessage">{error}</p>}
         <br />
         <div className="box-login-container">
           <h1>Login</h1>

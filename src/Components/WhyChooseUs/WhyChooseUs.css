@@ -1,51 +1,48 @@
-.whychooseus-text-container{
-	display: flex;
-	justify-content: center;
-	padding-top: 50px;
+.whychooseus-text-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
-.whychooseus-text-container h3{
-	font-size: 40px;
-	color: white;
-	
+.whychooseus-text-container h3 {
+  font-size: 40px;
+  color: white;
 }
 .whychooseus-text-container p {
-	text-align: center;
-	font-size: 20px;
-	color: rgb(190, 190, 190);
+  text-align: center;
+  font-size: 20px;
+  color: rgb(190, 190, 190);
 }
-.whychooseus-card-container{
-	display: flex;
-	background: #2c293a;
-	padding: 50px 50px;
-	border-radius: 10px;
-	margin-top: 50px;
-	justify-content: space-evenly;
+.whychooseus-card-container {
+  display: flex;
+  background: #2c293a;
+  padding: 50px 50px;
+  border-radius: 10px;
+  margin-top: 50px;
+  justify-content: space-evenly;
 }
-.card-container{
-	border-radius: 20px;
-	display: flex;
-	padding: 20px 30px;
-	gap: 20px;
-	width: 300px;
-	height: 100px;
+.card-container {
+  border-radius: 20px;
+  display: flex;
+  padding: 20px 30px;
+  gap: 20px;
+  width: 300px;
+  height: 100px;
 }
 
 .card-container:hover {
-	border: 1px solid #de603d;
+  border: 1px solid #de603d;
 }
 
-.heading-card{
-	font-size: 20px;
-	font-weight: bold;
-
+.heading-card {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.tagline-card{
-	font-weight: lighter;
-	color: rgb(210, 210, 210);
+.tagline-card {
+  font-weight: lighter;
+  color: rgb(210, 210, 210);
 }
-.image-icon{
-	width: 50px;
-	height: 50px;
+.image-icon {
+  width: 50px;
+  height: 50px;
 }
-

@@ -96,16 +96,21 @@
 }
 
 .movie-info {
-  height: 100px;
+  height: 200px;
   border-radius: 20px;
+  padding-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
 }
+
 .movie-info h3,
 .movie-info p {
-  padding-left: 50px;
+  padding-left: 10px;
+  align-self: start;
 }
 
-
-.movie-item-container{
+.movie-item-container {
   display: flex;
   gap: 70px;
   flex-wrap: wrap;

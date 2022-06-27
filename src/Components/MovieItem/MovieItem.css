@@ -16,35 +16,36 @@
   border-radius: 20px;
 }
 
-.movie-text{
-	margin-top: 10px;
-	margin-bottom: 20px;
+.movie-text {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-
-.movie-text{
-	text-align: center;
+.movie-text {
+  text-align: center;
 }
 
-
-.button-add-wishlist-sm{
-	width: 150px;
-	height: 40px;
-	background: #de603d;
-	border-radius: 10px;
-	border: none;
-	margin-top: 20px;
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.button-add-wishlist-outline{
-	width: 150px;
-	height: 40px;
-	border: 1px solid #de603d;
-	background: none;
-	border-radius: 10px;
-	border: none;
-	margin-top: 20px;
+.button-add-wishlist-sm {
+  width: 150px;
+  height: 40px;
+  background: #de603d;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
 }
 
-
+.button-add-wishlist-outline {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #de603d;
+  background: none;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+}
