@@ -6,7 +6,10 @@ const Genrebuttons = (props) => {
   const match = useMatch("/genre/*");
   return (
     <li className="link-active">
-      <Link to={`${match.pathnameBase}/movies/${props.genre.name}`}>
+      <Link
+        className="genreName"
+        to={`${match.pathnameBase}/movies/${props.genre.name}`}
+      >
         {props.genre.name}
       </Link>
     </li>

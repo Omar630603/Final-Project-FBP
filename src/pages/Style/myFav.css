@@ -1,0 +1,57 @@
+.myfavorite-container {
+  width: 80%;
+  margin: 10px auto;
+}
+.titleMyfavorite {
+  display: flex;
+}
+.titleMyfavorite button {
+  margin-left: auto;
+  background-color: rgb(130, 190, 70);
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.addList {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.addList input {
+  background: rgb(255, 255, 255);
+  width: 400px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+  color: black;
+}
+
+.addList button {
+  background-color: rgb(130, 190, 70);
+  padding: 5px 20px;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  border: none;
+}
+.addList input[type="text"]:focus {
+  border: none;
+  outline: none;
+}
+.errorMessage {
+  color: #ffff;
+  margin: 15px 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #d65656;
+}
+.successMessage {
+  color: #ffff;
+  margin: 15px 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(130, 190, 70);
+}
