@@ -42,19 +42,35 @@
 /* Genre page */
 .genre-name {
   text-transform: capitalize;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
 }
 .genre-container h3 {
   margin-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  line-height: 150%;
+  padding: 5px 0;
+}
+.genre-container h2{
+  font-size: 30px;
+	color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .genre-buttons {
   background-color: #1f1d2c;
   padding: 30px 0;
+  justify-content: center;
 }
 .genre-buttons ul {
   padding-left: 0;
   display: flex;
   gap: 30px;
   list-style: none;
+  justify-content: center;
 }
 .genre-buttons ul li {
   padding: 20px;
@@ -73,9 +89,10 @@
 }
 
 .movies {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .movie-container {
   height: 500px;
@@ -84,6 +101,13 @@
   background: #575757;
   border-radius: 20px;
   box-shadow: 0px 0px 20px #888888;
+}
+.movie-title-container h2{
+  font-size: 30px;
+	color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .movie-image {
   border-radius: 20px 20px 0 0;
