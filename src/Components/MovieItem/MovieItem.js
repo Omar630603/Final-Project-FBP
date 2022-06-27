@@ -17,8 +17,8 @@ const MovieItem=(props) => {
 						<p>{props.movie.released_date}</p>
 						<p>{props.movie.rating}</p>
 						<p>{props.movie.director}</p>
-						<button className='button-add-wishlist' >Add To Whislist</button>
-						<Link to = {`/detail/${props.movie.id}`}><button className='button-add-wishlist-outline'>Show Detail</button></Link>
+
+						<Link to = {`/detail/${props.movie.id}`}><button className='button-add-wishlist'>Show Detail</button></Link>
 					</div>
 				</div>
 			</div>
