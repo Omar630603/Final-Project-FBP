@@ -25,14 +25,15 @@ const DetailMovie = (props) => {
             </div>
             <div className="group">
               <h3>
-                Rating: <small>{props.detail.rating}/5</small>
+                Rating: 
               </h3>
+              <p>{props.detail.rating}/5</p>
             </div>
           </div>
           <div className="link">
             <h3>
               Link to Streaming :{" "}
-              <a href={`${props.detail.linkStreaming}`} target="blank">
+              <a href={`${props.detail.linkStreaming}`} target="_blank">
                 [Link Streaming]
               </a>
             </h3>
