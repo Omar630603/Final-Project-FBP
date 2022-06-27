@@ -27,7 +27,7 @@ function Movies(props) {
     });
   }, [movie]);
   return (
-    <div>
+    <div className="genre-container-top">
       <h2 className="genre-name">{`${match.params["genre"]}`}</h2>
       <h3 className="genre-name">{`${props.genre.description}`}</h3>
       <div className="movies">

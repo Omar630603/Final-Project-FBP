@@ -26,6 +26,7 @@ const MoviesPage = () => {
     <div className="home-container">
       <div className="movie-title-container">
         <h2>List of Movie</h2>
+        <p>Here You can see all the list of movies. Enjoy It!</p>
       </div>
       <div className="movie-item-container">
         {movie.map((value) => {

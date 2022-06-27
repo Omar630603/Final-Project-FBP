@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MovieItem = (props) => {
   return (
     <div className="movies">
-      <div className="movie-container">
+      <div className="movie-container-item">
         <div className="movie-image">
           <img
             src={`${props.movie.cover}`}
@@ -13,7 +13,7 @@ const MovieItem = (props) => {
             className="movie-item-image"
           />
         </div>
-        <div className="movie-info">
+        <div className="movie-info-item">
           <h3>{props.movie.name}</h3>
           <p>{props.movie.released_date}</p>
           <p>{props.movie.rating} / 5</p>
