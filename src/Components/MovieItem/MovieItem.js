@@ -18,7 +18,7 @@ const MovieItem=(props) => {
 						<p>{props.movie.rating}</p>
 						<p>{props.movie.director}</p>
 
-						<Link to = {`/detail/${props.movie.id}`}><button className='button-add-wishlist'>Show Detail</button></Link>
+						<Link to = {`/detail/${props.movie.id}`}><button className='button-add-wishlist-sm'>Show Detail</button></Link>
 					</div>
 				</div>
 			</div>
