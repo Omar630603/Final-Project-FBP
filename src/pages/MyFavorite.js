@@ -20,17 +20,17 @@ const MyFavorite = () => {
     collection(db, "lists"),
     where("CreatedBy", "==", authUser ? authUser.uid : "")
   );
-  //   useEffect(() => {
-  //     getDocs(listQuery).then((querySnapshot) => {
-  //       setList(
-  //         querySnapshot.docs.map((doc) => {
-  //           const data = doc.data();
-  //           data.id = doc.id;
-  //           return data;
-  //         })
-  //       );
-  //     });
-  //   }, [list]);
+  useEffect(() => {
+    getDocs(listQuery).then((querySnapshot) => {
+      setList(
+        querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+          data.id = doc.id;
+          return data;
+        })
+      );
+    });
+  }, [list]);
   const showHide = () => {
     setHideCreate(!hideCreate);
   };
